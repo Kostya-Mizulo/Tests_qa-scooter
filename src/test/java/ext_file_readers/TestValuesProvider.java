@@ -13,6 +13,7 @@ public interface TestValuesProvider {
         return ConfigFactory.load("test_values.conf");
     }
 
+    String BROWSER = readConfig().getString("browser");
     String URL = readConfig().getString("url");
     Object[][] PERSONAL_INFO_LIST_Array = getPersonalInfoArrayOfArray("PersonalInformationArray");
 
