@@ -1,5 +1,6 @@
 package tests;
 
+import ext_file_readers.TestValuesProvider;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
@@ -15,7 +16,16 @@ abstract public class BaseTest {
 
     @Before
     public void setUp(){
-        driver = initChromeDriver();
+        switch (TestValuesProvider.BROWSER) {
+            case "chrome": {
+                driver = initChromeDriver();
+                break;
+            }
+            case "firefox": {
+                driver = initFirefoxDriver();
+                break;
+            }
+        }
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(7, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -24,7 +34,6 @@ abstract public class BaseTest {
 
     @After
     public void tearDown(){
-        driver.close();
         driver.quit();
     }
 
