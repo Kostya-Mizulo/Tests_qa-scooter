@@ -14,7 +14,7 @@ public class OrderScooterTest extends BaseTest{
                 .clickTopOrderButton()
                 .insertValuesIntoFieldsWithoutMetro("person1")
                 .selectSecondFromTopMetroStation()
-                .clickNextButton()
+                .clickNextButtonSuccess()
                 .insertRentInformationFirstOption()
                 .clickAndConfirmOrder();
 
@@ -28,7 +28,7 @@ public class OrderScooterTest extends BaseTest{
                 .clickBottomOrderButton()
                 .insertValuesIntoFieldsWithoutMetro("person2")
                 .selectSecondFromTopMetroStation()
-                .clickNextButton()
+                .clickNextButtonSuccess()
                 .insertRentInformationSecondOption()
                 .clickAndConfirmOrder();
 
