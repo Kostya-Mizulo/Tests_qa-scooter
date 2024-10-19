@@ -6,9 +6,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.By;
 import page_object.QAScooterMainPage;
-
-import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertTrue;
+
 
 @RunWith(Parameterized.class)
 public class FAQTest extends BaseTest{
@@ -21,23 +20,23 @@ public class FAQTest extends BaseTest{
         this.answer = answer;
     }
 
+
     @Parameterized.Parameters
     public static Object[][] getFAQValues(){
         return TestValuesProvider.FAQ_VALUES;
     }
 
+
     @Test
     public void clickQuestionInFAQCorrectAnswerOpensSuccessfully(){
         QAScooterMainPage mainPage = new QAScooterMainPage();
         mainPage.scrollToAccordion();
-        By.xpath("//div[@class='accordion__button' and contains(text(), 'Сколько это стоит')]/ancestor::div[@class='accordion__item']//div[@class='accordion__panel']");
 
         String locatorToAccordionItemQuestion = ((new StringBuilder())
                 .append("//div[@class='accordion__button' and contains(text(), '")
                 .append(question)
                 .append("')]"))
                 .toString();
-
 
         driver.findElement(By.xpath(locatorToAccordionItemQuestion)).click();
 
@@ -49,7 +48,6 @@ public class FAQTest extends BaseTest{
         String actualTextInAccordion = driver.findElement(By.xpath(locatorToAccordionItemAnswer)).getText();
 
         assertTrue("Текст ответа не совпадает с ожидаемым", actualTextInAccordion.contains(answer));
-
     }
 
 

@@ -5,11 +5,10 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import static java.lang.String.format;
 
-public class PersonalInformationForOrderPage extends BasePage{
 
+public class PersonalInformationForOrderPage extends BasePage{
     @FindBy(xpath = "//input[contains(@placeholder, 'Имя')]")
     private WebElement nameInputField;
 
@@ -43,9 +42,11 @@ public class PersonalInformationForOrderPage extends BasePage{
     @FindBy(xpath = "//button[text()='Далее']")
     private WebElement nextButton;
 
+
     public PersonalInformationForOrderPage(){
         PageFactory.initElements(driver, this);
     }
+
 
     public PersonalInformationForOrderPage insertValuesIntoFieldsWithoutMetro(String person){
             nameInputField.sendKeys(TestValuesProvider.readConfig()
@@ -60,6 +61,7 @@ public class PersonalInformationForOrderPage extends BasePage{
         return this;
     }
 
+
     public PersonalInformationForOrderPage selectSecondFromTopMetroStation(){
         metroSearchInputField.click();
         metroSearchInputField.sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER);
@@ -67,31 +69,40 @@ public class PersonalInformationForOrderPage extends BasePage{
         return this;
     }
 
+
     public RentInformationForOrderPage clickNextButtonSuccess(){
         nextButton.click();
+
         return new RentInformationForOrderPage();
     }
 
+
     public PersonalInformationForOrderPage clickNextButtonError(){
         nextButton.click();
+
         return this;
     }
+
 
     public boolean isNameInputValidationErrorTextDisplayed(){
         return nameInputValidationErrorText.isDisplayed();
     }
 
+
     public boolean isSurnameInputValidationErrorTextDisplayed(){
         return surnameInputValidationErrorText.isDisplayed();
     }
+
 
     public boolean isAddressInputValidationErrorTextDisplayed(){
         return addressInputValidationErrorText.isDisplayed();
     }
 
+
     public boolean isMetroInputValidationErrorTextDisplayed(){
         return metroInputValidationErrorText.isDisplayed();
     }
+
 
     public boolean isPhoneInputValidationErrorTextDisplayed(){
         return phoneInputValidationErrorText.isDisplayed();
