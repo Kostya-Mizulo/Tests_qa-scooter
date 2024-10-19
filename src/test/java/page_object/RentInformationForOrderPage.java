@@ -1,5 +1,6 @@
 package page_object;
 
+import ext_file_readers.TestValuesProvider;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -62,7 +63,7 @@ public class RentInformationForOrderPage extends BasePage{
         rentalPeriodField.click();
         oneDayRentSelect.click();
         checkboxForBlackScooter.click();
-        commentInputField.sendKeys("Ты крутой!");
+        commentInputField.sendKeys(TestValuesProvider.COMMENT_FOR_COURIER);
 
         return this;
     }

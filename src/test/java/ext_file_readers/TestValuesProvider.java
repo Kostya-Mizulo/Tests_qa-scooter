@@ -14,6 +14,7 @@ public interface TestValuesProvider {
     String BROWSER = readConfig().getString("browser");
     String URL = readConfig().getString("url");
     Object[][] FAQ_VALUES = getPersonalInfoArrayOfArray("FAQ_Values");
+    String COMMENT_FOR_COURIER = readConfig().getString("commentForCourier");
 
 
     private static Object[][] getPersonalInfoArrayOfArray(String keyFromConf) {
