@@ -19,6 +19,9 @@ public class QAScooterMainPage extends BasePage{
     @FindBy(id = "rcc-confirm-button")
     private WebElement confirmCookieButton;
 
+    @FindBy(className = "accordion")
+    private WebElement accordion;
+
 
     public QAScooterMainPage(){
         driver.get(TestValuesProvider.URL);
@@ -35,5 +38,10 @@ public class QAScooterMainPage extends BasePage{
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", bottomOrderButton);
         bottomOrderButton.click();
         return new PersonalInformationForOrderPage();
+    }
+
+    public QAScooterMainPage scrollToAccordion(){
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", accordion);
+        return this;
     }
 }
