@@ -5,6 +5,7 @@ import page_object.PersonalInformationForOrderPage;
 import page_object.QAScooterMainPage;
 import static org.junit.Assert.assertTrue;
 
+
 public class WrongInputInFieldOrderTest extends BaseTest{
 
     @Test
@@ -16,6 +17,7 @@ public class WrongInputInFieldOrderTest extends BaseTest{
                 personalInformationForOrderPage.isNameInputValidationErrorTextDisplayed());
     }
 
+
     @Test
     public void wrongInputInFieldSurnameCauseValidationErrorTest(){
         PersonalInformationForOrderPage personalInformationForOrderPage = (new QAScooterMainPage())
@@ -24,6 +26,7 @@ public class WrongInputInFieldOrderTest extends BaseTest{
         assertTrue("Текст ошибки не отображается",
                 personalInformationForOrderPage.isSurnameInputValidationErrorTextDisplayed());
     }
+
 
     @Test
     public void wrongInputInFieldAddressCauseValidationErrorTest(){
@@ -34,6 +37,7 @@ public class WrongInputInFieldOrderTest extends BaseTest{
                 personalInformationForOrderPage.isAddressInputValidationErrorTextDisplayed());
     }
 
+
     @Test
     public void wrongInputInFieldMetroCauseValidationErrorTest(){
         PersonalInformationForOrderPage personalInformationForOrderPage = (new QAScooterMainPage())
@@ -43,6 +47,7 @@ public class WrongInputInFieldOrderTest extends BaseTest{
                 personalInformationForOrderPage.isMetroInputValidationErrorTextDisplayed());
     }
 
+
     @Test
     public void wrongInputInFieldPhoneCauseValidationErrorTest(){
         PersonalInformationForOrderPage personalInformationForOrderPage = (new QAScooterMainPage())
@@ -51,4 +56,6 @@ public class WrongInputInFieldOrderTest extends BaseTest{
         assertTrue("Текст ошибки не отображается",
                 personalInformationForOrderPage.isPhoneInputValidationErrorTextDisplayed());
     }
+
+
 }

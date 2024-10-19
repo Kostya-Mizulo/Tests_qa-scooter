@@ -44,4 +44,6 @@ public class QAScooterMainPage extends BasePage{
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", accordion);
         return this;
     }
+
+
 }

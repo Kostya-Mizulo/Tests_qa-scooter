@@ -4,11 +4,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import static org.junit.Assert.assertTrue;
 
 public class RentInformationForOrderPage extends BasePage{
     @FindBy(xpath = "//input[contains(@placeholder, 'Когда привезти самокат')]")
@@ -38,9 +36,11 @@ public class RentInformationForOrderPage extends BasePage{
     @FindBy(xpath = "//div[contains(@class, 'Order_Modal')]//button[text()='Да']")
     private WebElement confirmOrderButton;
 
+
     public RentInformationForOrderPage(){
         PageFactory.initElements(driver, this);
     }
+
 
     public RentInformationForOrderPage insertRentInformationFirstOption(){
         calendarInputField.click();
@@ -52,6 +52,8 @@ public class RentInformationForOrderPage extends BasePage{
 
         return this;
     }
+
+
     public RentInformationForOrderPage insertRentInformationSecondOption(){
         LocalDate tomorrow = LocalDate.now().plusDays(1);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
@@ -65,10 +67,13 @@ public class RentInformationForOrderPage extends BasePage{
         return this;
     }
 
+
     public ConfirmationOrderPage clickAndConfirmOrder(){
         orderButton.click();
         confirmOrderButton.click();
 
         return new ConfirmationOrderPage();
     }
+
+
 }

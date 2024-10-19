@@ -1,10 +1,10 @@
 package tests;
 
-
 import org.junit.Test;
 import page_object.ConfirmationOrderPage;
 import page_object.QAScooterMainPage;
 import static org.junit.Assert.assertTrue;
+
 
 public class OrderScooterTest extends BaseTest{
     @Test
@@ -20,6 +20,7 @@ public class OrderScooterTest extends BaseTest{
 
         assertTrue("Ошибка: не удалось оформить заказ самоката", confirmationPage.isOrderCreatedSuccessfully());
     }
+
 
     @Test
     public void orderScooterWithWritingDateAndCommentSuccessfullOrdered(){
